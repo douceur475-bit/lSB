@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque des Épreuves - Lycée</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- En-tête du site public -->
+    <header>
+        <div class="logo-area">
+            <h1>📚 Bibliothèque des Épreuves du Lycée</h1>
+        </div>
+        <nav>
+            <a href="epreuves.html" class="active">Catalogue</a>
+            <a href="dashboard.html">Espace Professeur</a>
+            <a href="index.html" style="color: var(--primary); font-weight: 600;">S'inscrire / Connexion</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Section de Recherche et de Filtrage -->
+        <div class="card" style="padding: 1.5rem; margin-bottom: 2rem;">
+            <div class="search-filter-bar">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="searchInput">Rechercher une épreuve</label>
+                    <input type="text" id="searchInput" placeholder="Ex: Mathématiques, Réseau, Devoir...">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filterMatiere">Filtrer par matière</label>
+                    <select id="filterMatiere">
+                        <option value="">Toutes les matières</option>
+                        <option value="Mathématiques">Mathématiques</option>
+                        <option value="Physique-Chimie">Physique-Chimie</option>
+                        <option value="SVT">SVT</option>
+                        <option value="Français">Français</option>
+                        <option value="Histoire-Géographie">Histoire-Géographie</option>
+                        <option value="Anglais">Anglais</option>
+                        <option value="Philosophie">Philosophie</option>
+                        <option value="Réseau">Réseau</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Programmation">Programmation</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filterClasse">Filtrer par classe</label>
+                    <select id="filterClasse">
+                        <option value="">Toutes les classes</option>
+                        <option value="Seconde C">Seconde C</option>
+                        <option value="Première A">Première A</option>
+                        <option value="Première TI">Première TI</option>
+                        <option value="Terminale C">Terminale C</option>
+                        <option value="Terminale TI">Terminale TI</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liste des Épreuves -->
+        <h2 style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-muted);">Épreuves disponibles pour les élèves</h2>
+        <div id="epreuvesList">
+            <!-- Les épreuves s'afficheront dynamiquement ici -->
+        </div>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

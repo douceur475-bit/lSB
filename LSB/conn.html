@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Enseignant - Portail Lycée</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="split-container">
+        <div class="slider-side">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop')">
+                <div class="slide-overlay">
+                    <h2>Espace Réservé aux Enseignants</h2>
+                    <p>Connectez-vous pour publier et partager vos sujets d'examens avec vos élèves.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000&auto=format&fit=crop')">
+                <div class="slide-overlay">
+                    <h2>Diffusion Rapide et Organisée</h2>
+                    <p>Classez vos épreuves par matière et par série (TI, C, D, A) en quelques secondes.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop')">
+                <div class="slide-overlay">
+                    <h2>Vous êtes un élève ?</h2>
+                    <p>Retournez sur la page principale pour consulter et télécharger les épreuves sans compte.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-side">
+            <div class="form-wrapper">
+                <h2>Connexion Enseignant</h2>
+                <p class="form-subtitle">Accédez à votre tableau de bord pour mettre en ligne de nouvelles épreuves.</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Adresse Email Professionnelle</label>
+                        <input type="email" id="email" required placeholder="enseignant@lycee.cm">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" required placeholder="••••••••">
+                    </div>
+
+                    <button type="submit" style="width: 100%; margin-top: 1rem;">Accéder à mon espace</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+                    Nouveau professeur ? <a href="inscription.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Créer un compte enseignant</a>
+                </p>
+                
+                <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); text-align: center;">
+                    <a href="index.html" style="color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                        ← Retourner au catalogue des épreuves (Accès Élèves)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

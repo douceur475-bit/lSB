@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Enseignant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <h1>Administration - Épreuves</h1>
+        </div>
+        <nav>
+            <a href="epreuves.html">Voir le site public ↗</a>
+            <a href="#" id="logoutBtn" style="color: var(--danger);">Déconnexion</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Publier une nouvelle épreuve</h2>
+            <form id="epreuveForm">
+                <div class="form-grid">
+                    <div class="form-group full">
+                        <label for="titre">Titre explicite de l'épreuve</label>
+                        <input type="text" id="titre" required placeholder="Ex: Devoir Surveillé N°2 - Programmation Web">
+                    </div>
+                    <div class="form-group">
+                        <label for="matiere">Matière</label>
+                        <select id="matiere" required>
+                            <option value="">Sélectionner...</option>
+                            <option value="Mathématiques">Mathématiques</option>
+                            <option value="Physique-Chimie">Physique-Chimie</option>
+                            <option value="SVT">SVT</option>
+                            <option value="Français">Français</option>
+                            <option value="Histoire-Géographie">Histoire-Géographie</option>
+                            <option value="Anglais">Anglais</option>
+                            <option value="Philosophie">Philosophie</option>
+                            <option value="Réseau">Réseau</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Programmation">Programmation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="classe">Classe cible</label>
+                        <select id="classe" required>
+                            <option value="">Sélectionner...</option>
+                            <option value="Seconde C">Seconde C</option>
+                            <option value="Première A">Première A</option>
+                            <option value="Première TI">Première TI</option>
+                            <option value="Terminale C">Terminale C</option>
+                            <option value="Terminale TI">Terminale TI</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label for="fichier">Fichier de l'épreuve (Format PDF)</label>
+                        <input type="file" id="fichier" accept=".pdf" required>
+                    </div>
+                </div>
+                <button type="submit">Mettre en ligne l'épreuve</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

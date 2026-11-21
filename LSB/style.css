@@ -1,0 +1,408 @@
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --badge-bg: #e0e7ff;
+    --badge-text: #3730a3;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- EN-TÊTE PRO (Espace Public & Dashboard) --- */
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.logo-area h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.025em;
+}
+
+nav {
+    display: flex;
+    gap: 1.75rem;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary);
+}
+
+/* --- CONTENEUR GENERAL --- */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    flex: 1;
+}
+
+/* --- CARTES & FORMULAIRES CLASSIQUES --- */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group.full {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fff;
+    transition: all 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- BARRE DE RECHERCHE & FILTRES --- */
+.search-filter-bar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* --- GRILLE DES CARRES PRO (ESPACE PUBLIC) --- */
+#epreuvesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1.75rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.epreuve-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1 / 1; /* Format carré parfait et symétrique */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.epreuve-card:hover {
+    transform: translateY(-5px);
+    border-color: #c7d2fe;
+    box-shadow: 0 12px 20px -3px rgba(79, 70, 229, 0.08);
+}
+
+.epreuve-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.epreuve-details h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.badge-classe {
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 0.35rem 0.85rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.epreuve-body-card {
+    margin: auto 0;
+}
+
+.epreuve-meta-card {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.epreuve-footer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+}
+
+.btn-download {
+    background-color: #f1f5f9;
+    color: var(--primary);
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-download:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+
+/* --- CARTES AVEC FOND D'ÉCRAN DYNAMIQUE PAR MATIÈRE --- */
+.epreuve-card.has-bg {
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    border: none;
+    position: relative;
+}
+
+/* Voile sombre pour garantir la lisibilité du texte */
+.epreuve-card.has-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.92) 100%);
+    z-index: 1;
+}
+
+.epreuve-card.has-bg > * {
+    position: relative;
+    z-index: 2;
+}
+
+.epreuve-card.has-bg .epreuve-details h3 {
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.epreuve-card.has-bg .epreuve-meta-card,
+.epreuve-card.has-bg .file-name-label {
+    color: #e2e8f0;
+}
+
+.epreuve-card.has-bg .epreuve-footer-card {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.epreuve-card.has-bg .badge-classe {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+}
+
+.epreuve-card.has-bg .btn-download {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.epreuve-card.has-bg .btn-download:hover {
+    background-color: var(--primary-hover);
+}
+
+
+/* --- DESIGN SPLIT-SCREEN (Connexion & Inscription) --- */
+.split-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.slider-side {
+    flex: 1.2;
+    position: relative;
+    overflow: hidden;
+    background-color: #111;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    z-index: 2;
+}
+
+.slide-overlay h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.slide-overlay p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: var(--card-bg);
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-wrapper h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.form-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+
+/* --- RESPONSIVE MOBILE & TABLETTES --- */
+@media(max-width: 900px) {
+    .split-container {
+        flex-direction: column;
+    }
+    .slider-side {
+        height: 250px;
+        flex: none;
+    }
+    .form-side {
+        padding: 2rem 1.5rem;
+    }
+    .container {
+        padding: 1.25rem;
+    }
+    .search-filter-bar {
+        grid-template-columns: 1fr;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-group.full {
+        grid-column: span 1;
+    }
+    .epreuve-card {
+        aspect-ratio: auto;
+        min-height: 240px;
+    }
+}
